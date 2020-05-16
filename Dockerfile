@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
-LABEL  Name=SSRS Version=0.0.11 maintainer="John Hall"
+LABEL  Name=PowerBI Version=0.1.0 maintainer="John Hall"
 
 # Download Links:
 ENV SQL "https://go.microsoft.com/fwlink/?linkid=866662"
