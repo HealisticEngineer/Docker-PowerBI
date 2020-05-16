@@ -1,8 +1,14 @@
 # Power Bi Reporting Services in Docker
 
-creates a fresh install of SSRS in a container - pretty useful for dev / test - not for production use!
+creates a fresh install of PowerBi Report Server in a container - pretty useful for dev / test - not for production use!
 
 ## Run it
+
+Download the files and build the image.
+
+```
+docker build -t HealisticEngineer/pbirs1.0 .
+```
 
 This sample is uses mcr.microsoft.com/windows/servercore:ltsc2019 as a parent image and accepts all the commands listed there:
 
@@ -14,7 +20,7 @@ In addtion it accepts two more env variables: </br>
 example:
 
 ```
-docker run -d -p 1433:1433 -p 80:80 -v C:/temp/:C:/temp/ -e sa_password=<YOUR SA PASSWORD> -e ACCEPT_EULA=Y -e pbirs_user=PBIAdmin -e pbirs_password=<YOUR PBIAdmin PASSWORD> --memory 6048mb phola/ssrs
+docker run -d -p 1433:1433 -p 80:80 -v C:/temp/:C:/temp/ -e sa_password=<YOUR SA PASSWORD> -e ACCEPT_EULA=Y -e pbirs_user=PBIAdmin -e pbirs_password=<YOUR PBIAdmin PASSWORD> --memory 6048mb HealisticEngineer/pbirs1.0
 ```
 
 then access PowerBI Report Server at http://localhost/reports and login using pbirs_user
