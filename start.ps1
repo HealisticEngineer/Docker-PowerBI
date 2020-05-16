@@ -21,8 +21,8 @@ param(
 .\sqlstart -sa_password $sa_password -ACCEPT_EULA $ACCEPT_EULA -attach_dbs \"$attach_dbs\" -Verbose
 
 
-Write-Verbose "SSRS Config"
-.\configureSSRS2017 -Verbose
+Write-Verbose "PBIRS Config"
+.\configurePBIRS -Verbose
 
 .\newadmin -username $pbirs_user -password $pbirs_password -Verbose
 

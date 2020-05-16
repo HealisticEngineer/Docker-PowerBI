@@ -17,14 +17,17 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 
 # make install files accessible
 COPY start.ps1 /
-COPY Install.ps1 /
+COPY SQLInstall.ps1 /
+COPY PbiInstall.ps1 /
 COPY configurePBIRS.ps1 /
 COPY sqlstart.ps1 /
 COPY newadmin.ps1 /
 WORKDIR /
 
-# Install SQL Server 2019 & PowerBI Report Server
-RUN .\install
+# Install SQL Server 2019
+RUN .\sqlinstall
+#  PowerBI Report Server
+RUN .\pbiinstall
 
 #HEALTHCHECK CMD [ "sqlcmd", "-Q", "select 1" ]
 HEALTHCHECK --interval=5s \
