@@ -1,8 +1,8 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
-LABEL  Name=PowerBI Version=0.1.11 maintainer="John Hall"
+LABEL Name=PowerBI Version=0.1.12 maintainer="John Hall"
 # Download Links:
 ENV SQL "https://go.microsoft.com/fwlink/?linkid=866662"
-ENV SQLCU "https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5001090-x64.exe"
+ENV SQLCU "https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5007182-x64.exe"
 ENV PowerBI "https://download.microsoft.com/download/0/6/A/06A6213D-0128-4D24-B9E7-179B5CA36CBF/PowerBIReportServer.exe"
 ENV sa_password="_" \
     attach_dbs="[]" \
