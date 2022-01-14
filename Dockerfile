@@ -1,8 +1,7 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
-LABEL Name=PowerBI Version=0.1.12 maintainer="John Hall"
-# Download Links:
+LABEL Name=PowerBI Version=0.1.14 maintainer="John Hall"
+# Download Link:
 ENV SQL "https://go.microsoft.com/fwlink/?linkid=866662"
-ENV PowerBI "https://download.microsoft.com/download/0/6/A/06A6213D-0128-4D24-B9E7-179B5CA36CBF/PowerBIReportServer.exe"
 ENV sa_password="_" \
     attach_dbs="[]" \
     ACCEPT_EULA="_" \
@@ -14,13 +13,8 @@ ENV sa_password="_" \
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-# make install files accessible
-COPY start.ps1 /
-COPY SQLInstall.ps1 /
-COPY PbiInstall.ps1 /
-COPY configurePBIRS.ps1 /
-COPY sqlstart.ps1 /
-COPY newadmin.ps1 /
+# Add powershell files to container
+COPY *.ps1 /
 WORKDIR /
 
 # Install SQL Server 2019
