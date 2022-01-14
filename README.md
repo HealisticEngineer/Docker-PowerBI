@@ -7,7 +7,7 @@ creates a fresh install of PowerBi Report Server in a container - pretty useful 
 Download the files and build the image.
 
 ```
-docker build -t healisticengineer/pbirs1.0 .
+docker build -t healisticengineer/pbirs1.14 .
 ```
 
 This sample is uses mcr.microsoft.com/windows/servercore:ltsc2019 as a parent image and accepts all the commands listed there:
