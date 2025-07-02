@@ -1,7 +1,5 @@
 # Get latetst PowerBI Report Server
-$url = "https://www.microsoft.com/en-us/download/confirmation.aspx?id=57270"
-$PBRS = (iwr $url -UseBasicParsing).links | Where-Object {$_ -match "https://download.microsoft.com/download"} 
-$ENV:PowerBI  = ($PBRS | Where-Object {$_.href -match "Powerbireportserver.exe"} |Select-Object -first 1).href
+$ENV:PowerBI  = "https://download.microsoft.com/download/3/7/5/3754bf6e-e422-46ec-b9f8-fb3dc3993cab/PowerBIReportServer.exe"
 # Install PowerBI
 new-item -Path C:\ -Name PBIRS_TEMP -ItemType Directory
 (New-Object System.Net.WebClient).DownloadFile($ENV:PowerBI, "c:\PBIRS_TEMP\PowerBIReportServer.exe")
